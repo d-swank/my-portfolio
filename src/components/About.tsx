@@ -1,0 +1,92 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { FaUserCircle } from "react-icons/fa";
+
+export default function About() {
+  return (
+    <section
+      id="about"
+      className="pt-24 md:pt-34 pb-24 md:pb-34 bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900 text-white px-4"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex justify-center mb-6 text-indigo-400"
+      >
+        <FaUserCircle className="text-6xl hover:text-indigo-500 transition" />
+      </motion.div>
+
+      <div className="max-w-screen-xl mx-auto text-center">
+        <motion.h2
+          className="text-5xl font-bold mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          About Me
+        </motion.h2>
+
+        <motion.div
+          className="group bg-gray-800/70 rounded-lg border border-gray-600 shadow-lg p-8 text-gray-100 hover:brightness-105 hover:border-indigo-400 transition transform backdrop-blur-sm max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <motion.p
+            className="text-lg leading-relaxed mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            I’m <span className="text-indigo-400 font-semibold">Dakota Swank</span>,
+            a creative and dedicated software engineer specializing in bringing
+            ideas to life. With a keen eye for detail and a relentless drive for
+            perfection, I take pride in crafting seamless user experiences and
+            robust backend solutions.
+          </motion.p>
+
+          <motion.p
+            className="text-lg leading-relaxed mb-6 text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            I’m passionate about web development and enjoy creating responsive,
+            user-friendly websites and web applications. I love turning ideas
+            into functional and beautiful digital experiences. My focus is on
+            clean design, solid functionality, and creating great user
+            experiences.
+          </motion.p>
+
+          <motion.p
+            className="text-lg leading-relaxed mb-6 text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
+            My journey in technology began at a young age and has evolved into a
+            professional pursuit of innovative problem-solving and continuous
+            learning. I believe deeply in the power of technology to transform
+            lives, industries, and the world at large.
+          </motion.p>
+
+          <motion.p
+            className="text-lg leading-relaxed text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            Outside of coding, I enjoy exploring the outdoors, engaging with the
+            tech community, and pushing the boundaries of my creativity through
+            ongoing projects and collaborations.
+          </motion.p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
