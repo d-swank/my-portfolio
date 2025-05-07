@@ -35,7 +35,6 @@ export default function Navbar() {
       <nav className="bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900 text-white shadow-md sticky top-0 z-50">
         <div className="px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex h-16 items-center justify-between">
-            
             {/* Logo */}
             <motion.div
               className="flex-shrink-0"

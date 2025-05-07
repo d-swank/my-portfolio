@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../common/ProjectCard";
 
 export default function Projects() {
   // Sample projects — you can expand this later!
@@ -23,7 +23,7 @@ export default function Projects() {
     {
       title: "FitHub",
       description:
-        "A fitness application that allows users to browse exercises, create customized workout plans, track their progress, and communicate with other users." +
+        "A fitness application that allows users to browse exercises, create customized workout plans, track their progress, and communicate with other users. " +
         "The application utilizes a client-server architecture, with a User Module that provides a user-friendly interface for accessing the FitHub server's data tables.",
       Technoloiges: [
         "Angular, ",

@@ -16,17 +16,20 @@ export const metadata: Metadata = {
   title: "Dakota Swank | Software Engineer",
   description:
     "Dakota Swank — a creative and dedicated software engineer building modern, user-friendly web applications with Next.js, React, and Tailwind CSS.",
+  icons: {
+    icon: "/favicon.png",
+  },
   keywords:
     "Dakota Swank, Software Engineer, Portfolio, Next.js, React, Tailwind CSS, Web Developer",
   openGraph: {
     title: "Dakota Swank | Software Engineer",
     description:
       "Explore the portfolio of Dakota Swank, a software engineer specializing in Next.js and modern web technologies.",
-    url: "https://swanksoftware.com", // Replace with your real portfolio URL
+    url: "https://www.swanksoftware.com/favicon.png",
     type: "website",
     images: [
       {
-        url: "https://swanksoftware.com/DS-Logo.sng",
+        url: "https://www.swanksoftware.com/favicon.png",
         width: 1200,
         height: 630,
         alt: "Dakota Swank's Portfolio",
