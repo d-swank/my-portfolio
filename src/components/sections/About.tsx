@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center px-4 pt-24 pb-32 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+      className="min-h-screen flex flex-col justify-center px-4 pt-24 pb-32 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -16,7 +16,7 @@ export default function About() {
         viewport={{ once: false, amount: 0.2 }}
         className="flex justify-center mb-6 text-indigo-600 dark:text-indigo-400"
       >
-        <FaUserAstronaut className="text-6xl hover:text-indigo-700 dark:hover:text-indigo-500 transition-colors" />
+        <FaUserAstronaut className="text-6xl hover:text-indigo-700 dark:hover:text-indigo-500" />
       </motion.div>
 
       <div className="max-w-screen-xl mx-auto text-center">
@@ -39,7 +39,7 @@ export default function About() {
         />
 
         <motion.div
-          className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border font-sans border-gray-300 dark:border-gray-600 shadow-lg p-8 text-gray-800 dark:text-gray-100 hover:brightness-105 hover:border-indigo-600 dark:hover:border-indigo-400 transition transform backdrop-blur-sm max-w-3xl mx-auto"
+          className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border font-sans border-gray-300 dark:border-gray-600 shadow-lg p-8 text-gray-800 dark:text-gray-100 hover:brightness-105 hover:border-indigo-600 dark:hover:border-indigo-400 transform backdrop-blur-sm max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

@@ -7,7 +7,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="min-h-screen flex flex-col justify-center px-4 pt-24 pb-32 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+      className="min-h-screen flex flex-col justify-center px-4 pt-24 pb-32 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white"
     >
       <div className="max-w-screen-xl mx-auto text-center">
         <motion.h2
@@ -31,7 +31,7 @@ export default function Education() {
         <div className="grid gap-6 md:grid-cols-2 font-sans">
           {/* Degree 1 */}
           <motion.div
-            className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-600 dark:hover:border-indigo-500 transition transform backdrop-blur-sm"
+            className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-600 dark:hover:border-indigo-500 transform backdrop-blur-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -42,7 +42,7 @@ export default function Education() {
                 whileHover={{ y: -3, rotate: -5 }}
                 whileTap={{ y: -3, rotate: -5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-500 transition-colors"
+                className="text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-500"
               >
                 <FaGraduationCap />
               </motion.span>
@@ -76,7 +76,7 @@ export default function Education() {
               href="https://www.csusm.edu/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition"
+              className="inline-block mt-4 px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600"
             >
               Visit School →
             </a>
@@ -84,7 +84,7 @@ export default function Education() {
 
           {/* Degree 2 */}
           <motion.div
-            className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-600 dark:hover:border-indigo-500 transition transform backdrop-blur-sm"
+            className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-600 dark:hover:border-indigo-500 transform backdrop-blur-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -95,7 +95,7 @@ export default function Education() {
                 whileHover={{ y: -3, rotate: -5 }}
                 whileTap={{ y: -3, rotate: -5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-500 transition-colors"
+                className="text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-500"
               >
                 <FaGraduationCap />
               </motion.span>
@@ -129,7 +129,7 @@ export default function Education() {
               href="https://www.miracosta.edu/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition"
+              className="inline-block mt-4 px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600"
             >
               Visit School →
             </a>

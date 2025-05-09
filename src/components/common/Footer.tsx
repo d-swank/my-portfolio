@@ -17,25 +17,25 @@ export default function Footer() {
       <div className="space-x-4 text-sm mb-4 font-sans">
         <a
           href="#about"
-          className="hover:text-indigo-600 dark:hover:text-white transition-colors duration-300"
+          className="hover:text-indigo-600 dark:hover:text-white"
         >
           About
         </a>
         <a
           href="#education"
-          className="hover:text-indigo-600 dark:hover:text-white transition-colors duration-300"
+          className="hover:text-indigo-600 dark:hover:text-white"
         >
           Education
         </a>
         <a
           href="#experience"
-          className="hover:text-indigo-600 dark:hover:text-white transition-colors duration-300"
+          className="hover:text-indigo-600 dark:hover:text-white"
         >
           Experience
         </a>
         <a
           href="#projects"
-          className="hover:text-indigo-600 dark:hover:text-white transition-colors duration-300"
+          className="hover:text-indigo-600 dark:hover:text-white"
         >
           Projects
         </a>
@@ -47,7 +47,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           title="Next.js"
-          className="hover:text-indigo-600 dark:hover:text-white transition-colors duration-300n"
+          className="hover:text-indigo-600 dark:hover:text-white"
         >
           <SiNextdotjs />
         </a>
@@ -56,7 +56,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           title="TypeScript"
-          className="text-blue-600 dark:text-blue-400 hover:text-indigo-600 dark:hover:text-white transition-colors duration-300"
+          className="text-blue-600 dark:text-blue-400 hover:text-indigo-600 dark:hover:text-white"
         >
           <SiTypescript />
         </a>
@@ -65,7 +65,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           title="Tailwind CSS"
-          className="text-teal-600 dark:text-teal-400 hover:text-indigo-600 dark:hover:text-white transition-colors duration-300"
+          className="text-teal-600 dark:text-teal-400 hover:text-indigo-600 dark:hover:text-white"
         >
           <SiTailwindcss />
         </a>
@@ -74,7 +74,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           title="Framer Motion"
-          className="text-pink-600 dark:text-pink-400 hover:text-indigo-600 dark:hover:text-white transition-colors duration-300"
+          className="text-pink-600 dark:text-pink-400 hover:text-indigo-600 dark:hover:text-white"
         >
           <SiFramer />
         </a>

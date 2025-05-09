@@ -51,7 +51,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-screen flex flex-col justify-center px-4 pt-24 pb-32 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+      className="min-h-screen flex flex-col justify-center px-4 pt-24 pb-32 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white"
     >
       <div className="max-w-screen-xl mx-auto">
         <motion.h2
@@ -76,7 +76,7 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-600 dark:hover:border-indigo-500 transition transform backdrop-blur-sm"
+              className="bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-600 dark:hover:border-indigo-500 transform backdrop-blur-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}

@@ -71,7 +71,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="pt-24 md:pt-34 pb-24 md:pb-34 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300 px-4 shadow-md"
+      className="pt-24 md:pt-34 pb-24 md:pb-34 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white px-4 shadow-md"
     >
       <div className="max-w-screen-xl mx-auto text-center">
         <motion.h2
@@ -90,25 +90,18 @@ export default function Projects() {
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.2 }}
-        ></motion.div>
+        />
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 font-sans">
           {projects.map((project, index) => (
-            <motion.div
+            <ProjectCard
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: false, amount: 0.2 }}
-            >
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                Technologies={project.Technoloiges || "N/A"}
-                link={project.link}
-                index={0}
-              />
-            </motion.div>
+              title={project.title}
+              description={project.description}
+              Technologies={project.Technoloiges || "N/A"}
+              link={project.link}
+              index={index}
+            />
           ))}
         </div>
       </div>

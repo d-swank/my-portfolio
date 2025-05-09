@@ -27,8 +27,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gradient-to-r from-white via-slate-200 to-slate-300 text-gray-900 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:text-white shadow-md sticky top-0 z-50 transition-colors">
-        {" "}
+      <nav className="bg-gradient-to-r from-white via-slate-200 to-slate-300 text-gray-900 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:text-white shadow-md sticky top-0 z-50">
         <div className="px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex h-16 items-center justify-between gap-4">
             {/* Logo */}
@@ -82,7 +81,6 @@ export default function Navbar() {
                 </svg>
               </Link>
             </motion.div>
-
             {/* Desktop Nav */}
             <div className="hidden md:flex space-x-6 text-lg font-mono">
               {navLinks.map((link, i) => (
@@ -92,7 +90,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + i * 0.3, duration: 0.8 }}
-                  className="font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="font-semibold hover:text-indigo-600 dark:hover:text-indigo-400"
                 >
                   {link.label}
                 </motion.a>
@@ -105,7 +103,7 @@ export default function Navbar() {
                   delay: 0.6 + navLinks.length * 0.3,
                   duration: 0.8,
                 }}
-                className="font-semibold hover:text-indigo-400 dark:hover:text-indigo-400 transition border-b-3 hover:border-indigo-400 dark:hover:border-indigo-400 pb-1 cursor-pointer"
+                className="font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 border-b-2 pb-1 cursor-pointer"
               >
                 Resume
               </motion.button>
@@ -122,12 +120,12 @@ export default function Navbar() {
                 <motion.span
                   animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 10 : 0 }}
                   transition={{ duration: 0.35 }}
-                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full transition-colors"
+                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full"
                 />
                 <motion.span
                   animate={{ opacity: menuOpen ? 0 : 1, x: menuOpen ? 20 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full transition-colors"
+                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full"
                 />
                 <motion.span
                   animate={{
@@ -135,7 +133,7 @@ export default function Navbar() {
                     y: menuOpen ? -10 : 0,
                   }}
                   transition={{ duration: 0.35 }}
-                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full transition-colors"
+                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full"
                 />
               </motion.button>
             </div>
@@ -152,14 +150,14 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.4 }}
-            className="md:hidden fixed inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-md flex flex-col items-center justify-center gap-6 z-5 font-semibold text-black dark:text-white"
+            className="md:hidden fixed inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-md flex flex-col items-center justify-center gap-6 z-50 font-semibold text-black dark:text-white"
           >
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-xl hover:text-indigo-400 transition"
+                className="text-xl hover:text-indigo-600 dark:hover:text-indigo-400"
               >
                 {link.label}
               </a>
@@ -169,7 +167,7 @@ export default function Navbar() {
                 setIsResumeOpen(true);
                 setMenuOpen(false);
               }}
-              className="text-xl hover:text-indigo-400 transition cursor-pointer border-b-3 hover:border-indigo-400 pb-1"
+              className="text-xl hover:text-indigo-600 dark:hover:text-indigo-400 border-b-2 pb-1"
             >
               Resume
             </button>
@@ -182,6 +180,8 @@ export default function Navbar() {
         isOpen={isResumeOpen}
         closeModalAction={() => setIsResumeOpen(false)}
       />
+
+      {/* Mobile Theme Toggle */}
       <div className="md:hidden fixed bottom-4 left-4 z-50">
         <ThemeToggle />
       </div>
