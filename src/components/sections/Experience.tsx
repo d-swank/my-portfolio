@@ -16,10 +16,10 @@ export default function Experience() {
       company: "Boeing",
       period: "2023 – Present",
       description: [
-        "Executes diverse testing (functional, regression, web services, mobile performance/usability), tracking defects and maintaining detailed documentation of test results.\n",
-        "Serves as Scrum Master, facilitating all ceremonies, coaching the team on Agile/Scrum principles.\n",
-        "Develops and maintains multiple automated test scripts using TestComplete, integrating them into Jenkins CI.\n",
-        "Leads end-to-end QA strategies for major releases, overseeing test planning and documentation.\n",
+        "Executes diverse testing (functional, regression, web services, mobile performance/usability), tracking defects and maintaining detailed documentation of test results.",
+        "Serves as Scrum Master, facilitating all ceremonies, coaching the team on Agile/Scrum principles.",
+        "Develops and maintains multiple automated test scripts using TestComplete, integrating them into Jenkins CI.",
+        "Leads end-to-end QA strategies for major releases, overseeing test planning and documentation.",
         "Collaborates with development teams to identify, report, and resolve software defects promptly.",
       ],
     },
@@ -28,10 +28,10 @@ export default function Experience() {
       company: "Hobby",
       period: "2018 – Present",
       description: [
-        "Develops responsive and dynamic web applications using Next.js and React.\n",
-        "Utilizes Tailwind CSS to create modern, maintainable, and scalable styling solutions.\n",
-        "Ensures cross-browser compatibility and responsive design across various devices.\n",
-        "Optimizes applications for performance and accessibility.\n",
+        "Develops responsive and dynamic web applications using Next.js and React.",
+        "Utilizes Tailwind CSS to create modern, maintainable, and scalable styling solutions.",
+        "Ensures cross-browser compatibility and responsive design across various devices.",
+        "Optimizes applications for performance and accessibility.",
         "Implements reusable components and follows best practices for clean, efficient code.",
       ],
     },
@@ -40,10 +40,10 @@ export default function Experience() {
       company: "United States Navy",
       period: "2014 – 2018",
       description: [
-        "Held a secret security clearance while performing bridge associated tasks such as standing watch as Helmsman and Lee Helmsman.\n",
-        "Essential to the ship’s navigation for serving as a master helmsman who successfully conducted critical tasks of driving a 1,092-foot aircraft carrier through 16 special evolutions traveling over 12,000 miles and 4 successful Pacific deployments.\n",
-        "Stood watch as BMOW (Boatswain’s Mate of the Watch) which included the responsibility of leading a team of five seamen to having a successful watch, making special announcements and everything related to the ship’s activities over the 1MC.\n",
-        "Trained, directed, and supervised personnel in ship’s maintenance duties from all activities relating to marlinespike, deck, boat seamanship, painting, upkeep of ship’s external structure, rigging, deck equipment, and RHIBs (Rigid Hull Inflatable Boats).",
+        "Held a secret security clearance while performing bridge associated tasks such as standing watch as Helmsman and Lee Helmsman.",
+        "Served as a master helmsman responsible for navigating a 1,092-foot aircraft carrier through critical missions over 12,000 miles and 4 successful Pacific deployments.",
+        "Led a watch team of five seamen as BMOW, ensuring safe operations and clear communication via ship-wide announcements.",
+        "Trained and supervised ship maintenance duties including rigging, painting, deck equipment, and RHIB operations.",
       ],
     },
   ];
@@ -51,11 +51,11 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="pt-24 md:pt-34 pb-24 md:pb-34 bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900 text-white px-4"
+      className="min-h-screen flex flex-col justify-center px-4 pt-24 pb-32 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
     >
       <div className="max-w-screen-xl mx-auto">
         <motion.h2
-          className="text-5xl font-bold mb-12 text-center"
+          className="text-5xl font-bold font-mono mb-4 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -64,26 +64,33 @@ export default function Experience() {
           Experience
         </motion.h2>
 
+        <motion.div
+          className="mx-auto mb-8 w-24 h-1 bg-indigo-600 dark:bg-indigo-500 rounded-full"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.2 }}
+        />
+
         <div className="space-y-10">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800/70 rounded-lg border border-gray-600 shadow-lg p-6 text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-400 transition transform backdrop-blur-sm"
+              className="bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-100 hover:brightness-110 hover:shadow-xl hover:scale-[1.02] hover:border-indigo-600 dark:hover:border-indigo-500 transition transform backdrop-blur-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: false, amount: 0.2 }}
             >
-              <h3 className="text-2xl font-semibold mb-1 text-white">
+              <h3 className="text-2xl font-semibold font-sans mb-1">
                 {exp.role}
               </h3>
-              <p className="text-gray-400 mb-3">
+              <p className="text-gray-600 dark:text-gray-400 mb-3 font-mono">
                 {exp.company} • {exp.period}
               </p>
 
-              {/* If description is an array, show bullets. Else, show paragraph */}
               {Array.isArray(exp.description) ? (
-                <ul className="list-disc pl-5 space-y-2 text-gray-300">
+                <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 font-sans">
                   {exp.description.map((point, idx) => (
                     <motion.li
                       key={idx}
@@ -97,7 +104,9 @@ export default function Experience() {
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-300">{exp.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">
+                  {exp.description}
+                </p>
               )}
             </motion.div>
           ))}

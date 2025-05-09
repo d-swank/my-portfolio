@@ -1,14 +1,14 @@
 "use client";
 
-import Link from "next/link";
-import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import Modal from "./Modal";
-import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/common/ThemeToggle";
 
 export default function Navbar() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -18,33 +18,29 @@ export default function Navbar() {
     { href: "#contact", label: "Contact" },
   ];
 
-  // Scroll lock when mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [isMenuOpen]);
+  }, [menuOpen]);
 
   return (
     <>
-      <nav className="bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900 text-white shadow-md sticky top-0 z-50">
+      <nav className="bg-gradient-to-r from-white via-slate-200 to-slate-300 text-gray-900 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:text-white shadow-md sticky top-0 z-50 transition-colors">
+        {" "}
         <div className="px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-16 items-center justify-between gap-4">
             {/* Logo */}
             <motion.div
               className="flex-shrink-0"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 2, ease: "easeOut" }}
+              transition={{ delay: 0.3, duration: 2 }}
             >
               <Link
                 href="#hero"
-                className="flex items-center text-white transition transform hover:scale-120 hover:text-indigo-400 cursor-pointer"
+                className="flex items-center dark:text-white hover:text-indigo-600 transition transform hover:scale-120 dark:hover:text-indigo-500 cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -87,104 +83,108 @@ export default function Navbar() {
               </Link>
             </motion.div>
 
-            {/* Desktop menu */}
-            <div className="hidden md:flex space-x-6 text-lg">
-              {navLinks.map((link, index) => (
-                <motion.div
+            {/* Desktop Nav */}
+            <div className="hidden md:flex space-x-6 text-lg font-mono">
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.label}
-                  initial={{ opacity: 0, y: -20 }}
+                  href={link.href}
+                  initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + index * 0.3, duration: 0.8 }}
+                  transition={{ delay: 0.6 + i * 0.3, duration: 0.8 }}
+                  className="font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  <Link
-                    href={link.href}
-                    className="hover:text-indigo-400 transition cursor-pointer"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
+                  {link.label}
+                </motion.a>
               ))}
-
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
+              <motion.button
+                onClick={() => setIsResumeOpen(true)}
+                initial={{ opacity: 0, y: -60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   delay: 0.6 + navLinks.length * 0.3,
                   duration: 0.8,
                 }}
+                className="font-semibold hover:text-indigo-400 dark:hover:text-indigo-400 transition border-b-3 hover:border-indigo-400 dark:hover:border-indigo-400 pb-1 cursor-pointer"
               >
-                <button
-                  onClick={() => setIsResumeOpen(true)}
-                  className="hover:text-indigo-400 transition border-b-3 hover:border-indigo-400 pb-1 cursor-pointer"
-                >
-                  Resume
-                </button>
-              </motion.div>
+                Resume
+              </motion.button>
+              <ThemeToggle />
             </div>
 
-            {/* Mobile hamburger */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-indigo-400 focus:outline-none cursor-pointer"
+            {/* Hamburger Icon */}
+            <div className="md:hidden ml-auto flex items-center justify-center z-50">
+              <motion.button
+                onClick={() => setMenuOpen(!menuOpen)}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col justify-center items-center gap-2 cursor-pointer"
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+                <motion.span
+                  animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 10 : 0 }}
+                  transition={{ duration: 0.35 }}
+                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full transition-colors"
+                />
+                <motion.span
+                  animate={{ opacity: menuOpen ? 0 : 1, x: menuOpen ? 20 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full transition-colors"
+                />
+                <motion.span
+                  animate={{
+                    rotate: menuOpen ? -45 : 0,
+                    y: menuOpen ? -10 : 0,
+                  }}
+                  transition={{ duration: 0.35 }}
+                  className="block w-8 h-0.5 bg-indigo-600 dark:bg-white rounded-full transition-colors"
+                />
+              </motion.button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Backdrop blur when menu is open */}
-      <div
-        className={`fixed inset-0 backdrop-blur-md bg-black/20 z-40 transition-opacity duration-300 md:hidden ${
-          isMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      ></div>
-
-      {/* Mobile menu */}
-      <div
-        className={`fixed inset-0 px-4 pb-4 pt-2 space-y-4 flex flex-col items-center justify-center text-lg text-white backdrop-blur-md z-50 transition-all duration-300 ease-in-out transform md:hidden ${
-          isMenuOpen
-            ? "translate-y-0 opacity-100 pointer-events-auto"
-            : "-translate-y-4 opacity-0 pointer-events-none"
-        }`}
-      >
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="absolute top-4 right-4 text-white hover:text-indigo-400 transition cursor-pointer"
-          aria-label="Close menu"
-        >
-          <X size={32} />
-        </button>
-
-        {navLinks.map((link) => (
-          <Link
-            key={link.label}
-            href={link.href}
-            className="block hover:text-indigo-400 transition cursor-pointer"
-            onClick={() => setIsMenuOpen(false)} // Auto-close when clicking a link
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.4 }}
+            className="md:hidden fixed inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-md flex flex-col items-center justify-center gap-6 z-5 font-semibold text-black dark:text-white"
           >
-            {link.label}
-          </Link>
-        ))}
-        <button
-          onClick={() => {
-            setIsResumeOpen(true);
-            setIsMenuOpen(false); // Auto-close menu when opening resume modal
-          }}
-          className="block hover:text-indigo-400 transition border-b-3 hover:border-ndigo-400 pb-1 cursor-pointer"
-        >
-          Resume
-        </button>
-      </div>
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-xl hover:text-indigo-400 transition"
+              >
+                {link.label}
+              </a>
+            ))}
+            <button
+              onClick={() => {
+                setIsResumeOpen(true);
+                setMenuOpen(false);
+              }}
+              className="text-xl hover:text-indigo-400 transition cursor-pointer border-b-3 hover:border-indigo-400 pb-1"
+            >
+              Resume
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
+      {/* Resume Modal */}
       <Modal
         isOpen={isResumeOpen}
         closeModalAction={() => setIsResumeOpen(false)}
       />
+      <div className="md:hidden fixed bottom-4 left-4 z-50">
+        <ThemeToggle />
+      </div>
     </>
   );
 }

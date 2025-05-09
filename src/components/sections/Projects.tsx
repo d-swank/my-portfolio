@@ -4,13 +4,11 @@ import { motion } from "framer-motion";
 import ProjectCard from "../common/ProjectCard";
 
 export default function Projects() {
-  // Sample projects — you can expand this later!
   const projects = [
     {
       title: "Portfolio Website",
       description:
-        "A sleek, responsive portfolio built with Next.js, TypeScript, and Tailwind CSS. The site showcases professional experience and projects with smooth Framer Motion animations, " +
-        "clean design, and optimized performance. Deployed with Vercel for fast, reliable hosting.",
+        "A sleek, responsive portfolio built with Next.js, TypeScript, and Tailwind CSS. The site showcases professional experience and projects with smooth Framer Motion animations, clean design, and optimized performance. Deployed with Vercel for fast, reliable hosting.",
       Technoloiges: [
         "Next.js, ",
         "TypeScript, ",
@@ -23,8 +21,7 @@ export default function Projects() {
     {
       title: "FitHub",
       description:
-        "A fitness application that allows users to browse exercises, create customized workout plans, track their progress, and communicate with other users. " +
-        "The application utilizes a client-server architecture, with a User Module that provides a user-friendly interface for accessing the FitHub server's data tables.",
+        "A fitness application that allows users to browse exercises, create customized workout plans, track their progress, and communicate with other users. The application utilizes a client-server architecture, with a User Module that provides a user-friendly interface for accessing the FitHub server's data tables.",
       Technoloiges: [
         "Angular, ",
         "HTML, ",
@@ -74,11 +71,11 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="pt-24 md:pt-34 pb-24 md:pb-34 bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900 text-white px-4 shadow-md"
+      className="pt-24 md:pt-34 pb-24 md:pb-34 bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-300 px-4 shadow-md"
     >
       <div className="max-w-screen-xl mx-auto text-center">
         <motion.h2
-          className="text-5xl font-bold mb-12"
+          className="text-5xl font-bold font-mono mb-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -86,7 +83,16 @@ export default function Projects() {
         >
           Projects
         </motion.h2>
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+
+        <motion.div
+          className="mx-auto mb-8 w-24 h-1 bg-indigo-600 dark:bg-indigo-500 rounded-full"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.2 }}
+        ></motion.div>
+
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 font-sans">
           {projects.map((project, index) => (
             <motion.div
               key={index}

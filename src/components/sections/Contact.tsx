@@ -7,11 +7,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="pt-24 md:pt-34 pb-24 md:pb-34 bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900 text-white px-4 border-b border-indigo-400"
+      className="min-h-screen flex flex-col justify-center bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white px-4 pt-24 pb-32 border-b border-indigo-600 dark:border-indigo-400 transition-colors duration-300"
     >
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
-          className="text-5xl font-bold mb-4"
+          className="text-5xl font-bold font-mono mb-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -20,25 +20,23 @@ export default function Contact() {
           Contact Me
         </motion.h2>
 
-        {/* Animated Divider */}
         <motion.div
-          className="mx-auto mb-8 w-24 h-1 bg-indigo-500 rounded-full"
+          className="mx-auto mb-8 w-24 h-1 bg-indigo-600 dark:bg-indigo-500 rounded-full"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.2 }}
-        ></motion.div>
+        />
 
-        {/* Card container with fade/scale entrance */}
         <motion.div
-          className="group bg-gray-800/70 rounded-lg border border-gray-600 shadow-lg p-8 text-gray-100 hover:brightness-105 hover:border-indigo-400 transition transform backdrop-blur-sm max-w-3xl mx-auto"
+          className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-8 text-gray-800 dark:text-gray-100 hover:brightness-105 hover:border-indigo-600 dark:hover:border-indigo-400 transition transform backdrop-blur-sm max-w-3xl mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: false, amount: 0.2 }}
         >
           <motion.p
-            className="text-xl mb-6 leading-relaxed"
+            className="text-xl mb-6 leading-relaxed font-sans text-gray-700 dark:text-gray-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -48,7 +46,6 @@ export default function Contact() {
             together!
           </motion.p>
 
-          {/* Social Icons with stagger */}
           <motion.div
             className="mt-8 flex justify-center space-x-8 text-4xl"
             initial="hidden"
@@ -79,7 +76,7 @@ export default function Contact() {
                 target={label === "Email" ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="hover:text-indigo-400 transition transform cursor-pointer"
+                className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-500 transition transform cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.3 }}
