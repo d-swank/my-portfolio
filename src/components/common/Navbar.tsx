@@ -39,14 +39,14 @@ export default function Navbar() {
             >
               <Link
                 href="#hero"
-                className="flex items-center dark:text-white hover:text-indigo-600 transition transform hover:scale-120 dark:hover:text-indigo-500 cursor-pointer"
+                className="flex items-center text-indigo-600 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transform hover:scale-110 transition-transform cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 375 375"
                   width="45"
                   height="45"
-                  className="transition transform"
+                  className="transform"
                 >
                   <defs>
                     <clipPath id="b3cae876d8">
@@ -81,6 +81,7 @@ export default function Navbar() {
                 </svg>
               </Link>
             </motion.div>
+
             {/* Desktop Nav */}
             <div className="hidden md:flex space-x-6 text-lg font-mono">
               {navLinks.map((link, i) => (
