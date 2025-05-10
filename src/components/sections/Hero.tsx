@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white text-4xl scroll-mt-20 transition-colors"
+      className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white text-4xl scroll-mt-20"
     >
       <motion.h1
         className="text-5xl md:text-7xl font-bold font-mono mb-4"
@@ -23,7 +23,7 @@ export default function Hero() {
         className="text-xl md:text-2xl font-sans max-w-3xl mb-6 px-5 md:px-5 leading-relaxed"
         initial={{ opacity: 0, x: 500 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 2 }}
       >
         I’m a San Diego-based Software QA Engineer who is driven by detail and
         passionate about performance.
