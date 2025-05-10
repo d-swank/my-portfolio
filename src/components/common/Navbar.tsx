@@ -91,7 +91,10 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + i * 0.3, duration: 0.8 }}
-                  className="font-semibold hover:text-indigo-600 dark:hover:text-indigo-400"
+                  className="relative flex hover:text-indigo-600 dark:hover:text-indigo-400
+        after:content-[''] after:absolute after:left-0 after:bottom-0.5 after:h-[2px]
+        after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 after:ease-out
+        hover:after:w-full"
                 >
                   {link.label}
                 </motion.a>
@@ -104,7 +107,7 @@ export default function Navbar() {
                   delay: 0.6 + navLinks.length * 0.3,
                   duration: 0.8,
                 }}
-                className="font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 border-b-2 pb-1 cursor-pointer"
+                className="relative flex font-mono text-lg pb-1 border-b-2 border-l-2 border-r-2 px-2 border-indigo-500 hover:border-indigo-500 hover:text-indigo-500 dark:border-indigo-400 dark:hover:border-indigo-500 text-indigo-500 transition-transform duration-200 shadow-md hover:shadow-indigo-600 cursor-pointer"
               >
                 Resume
               </motion.button>
@@ -151,7 +154,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.4 }}
-            className="md:hidden fixed inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-md flex flex-col items-center justify-center gap-6 z-50 font-semibold text-black dark:text-white"
+            className="md:hidden fixed inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-md flex flex-col items-center justify-center gap-6 z-50 text-black dark:text-white"
           >
             {navLinks.map((link) => (
               <a
@@ -168,7 +171,7 @@ export default function Navbar() {
                 setIsResumeOpen(true);
                 setMenuOpen(false);
               }}
-              className="text-xl hover:text-indigo-600 dark:hover:text-indigo-400 border-b-2 pb-1"
+              className="text-xl hover:text-indigo-600 dark:hover:text-indigo-400 border-b-2 pb-1 cursor-pointer"
             >
               Resume
             </button>
