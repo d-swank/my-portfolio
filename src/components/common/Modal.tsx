@@ -19,7 +19,7 @@ type ModalProps = {
 export default function Modal({ isOpen, closeModalAction }: ModalProps) {
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={closeModalAction}>
+      <Dialog as="div" className="relative z-40" onClose={closeModalAction}>
         <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
@@ -42,10 +42,10 @@ export default function Modal({ isOpen, closeModalAction }: ModalProps) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <DialogPanel className="w-full max-w-4xl relative transform rounded-2xl bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:bg-gray-800/70 text-gray-900 dark:text-gray-100 p-4 sm:p-6 text-center shadow-2xl border border-indigo-400 overflow-hidden">
+            <DialogPanel className="w-full max-w-4xl relative transform rounded-2xl bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:bg-gray-800/70 text-gray-900 dark:text-gray-100 p-4 sm:p-6 text-center shadow-2xl border border-indigo-400 overflow-hidden">
               <button
                 onClick={closeModalAction}
-                className="absolute top-4 right-4 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
+                className="absolute top-4 right-4 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer"
                 aria-label="Close"
               >
                 <X size={24} />
@@ -74,7 +74,7 @@ export default function Modal({ isOpen, closeModalAction }: ModalProps) {
               <a
                 href="/Dakota_Swank_Resume.pdf"
                 download
-                className="inline-block px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600"
+                className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-sans"
               >
                 Download Resume
               </a>

@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gradient-to-r from-white via-slate-200 to-slate-300 text-gray-900 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:text-white shadow-md sticky top-0 z-50">
+      <nav className="bg-gradient-to-r from-white via-slate-200 to-slate-300 text-gray-900 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:text-white shadow-md sticky top-0 z-100">
         <div className="px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex h-16 items-center justify-between gap-4">
             {/* Logo */}
