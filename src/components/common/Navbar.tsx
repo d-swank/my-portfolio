@@ -39,7 +39,7 @@ export default function Navbar() {
             >
               <Link
                 href="#hero"
-                className="flex items-center text-indigo-600 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transform hover:scale-110 transition-transform cursor-pointer"
+                className="flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-500 transform hover:scale-110 transition-transform cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -91,10 +91,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + i * 0.3, duration: 0.8 }}
-                  className="relative flex hover:text-indigo-600 dark:hover:text-indigo-400
-        after:content-[''] after:absolute after:left-0 after:bottom-0.5 after:h-[2px]
-        after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 after:ease-out
-        hover:after:w-full"
+                  className="relative flex hover:text-indigo-600 dark:hover:text-indigo-500 after:content-[''] after:absolute after:left-0 after:bottom-0.5 after:h-[2px] after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 after:ease-out hover:after:w-full"
                 >
                   {link.label}
                 </motion.a>
@@ -107,7 +104,7 @@ export default function Navbar() {
                   delay: 0.6 + navLinks.length * 0.3,
                   duration: 0.8,
                 }}
-                className="relative flex font-mono text-lg pb-1 border-b-2 border-l-2 border-r-2 px-2 border-indigo-500 hover:border-indigo-500 hover:text-indigo-500 dark:border-indigo-400 dark:hover:border-indigo-500 text-indigo-500 transition-transform duration-200 shadow-md hover:shadow-indigo-600 cursor-pointer"
+                className="relative flex font-mono text-lg pb-1 border-b-2 border-l-2 border-r-2 px-2 border-indigo-600 hover:border-indigo-600 hover:text-indigo-600 dark:border-indigo-500 dark:hover:border-indigo-500 text-indigo-500 transition-transform duration-200 shadow-lg hover:shadow-indigo-600 hover:animate-pulse cursor-pointer"
               >
                 Resume
               </motion.button>
@@ -118,8 +115,12 @@ export default function Navbar() {
             <div className="md:hidden ml-auto flex items-center justify-center z-50">
               <motion.button
                 onClick={() => setMenuOpen(!menuOpen)}
-                whileTap={{ scale: 0.95 }}
-                className="flex flex-col justify-center items-center gap-2 cursor-pointer"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 1.2 }}
+                className="flex flex-col justify-center items-center gap-2  cursor-pointer"
               >
                 <motion.span
                   animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 10 : 0 }}
@@ -161,7 +162,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-xl hover:text-indigo-600 dark:hover:text-indigo-400"
+                className="text-xl hover:text-indigo-600 dark:hover:text-indigo-500"
               >
                 {link.label}
               </a>
@@ -171,7 +172,7 @@ export default function Navbar() {
                 setIsResumeOpen(true);
                 setMenuOpen(false);
               }}
-              className="text-xl hover:text-indigo-600 dark:hover:text-indigo-400 border-b-2 pb-1 cursor-pointer"
+              className="font-mono text-xl pb-1 border-b-2 border-l-2 border-r-2 px-2 border-indigo-600 hover:border-indigo-600 hover:text-indigo-600 dark:border-indigo-500 dark:hover:border-indigo-500 text-indigo-500 transition-transform duration-200 shadow-lg hover:shadow-indigo-600 hover:animate-pulse cursor-pointer"
             >
               Resume
             </button>

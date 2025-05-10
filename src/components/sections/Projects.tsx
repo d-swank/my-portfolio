@@ -6,7 +6,7 @@ import ProjectCard from "../common/ProjectCard";
 export default function Projects() {
   const projects = [
     {
-      title: "Portfolio Website",
+      title: "Portfolio Website v2",
       description:
         "A sleek, responsive portfolio built with Next.js, TypeScript, and Tailwind CSS. The site showcases professional experience and projects with smooth Framer Motion animations, clean design, and optimized performance. Deployed with Vercel for fast, reliable hosting.",
       Technoloiges: [
@@ -16,7 +16,14 @@ export default function Projects() {
         "Framer Motion, ",
         "Vercel",
       ],
-      link: "#",
+      link: "https://github.com/d-swank/my-portfolio-v2",
+    },
+    {
+      title: "Portfolio Website v1",
+      description:
+        "First portfolio website — built while learning the fundamentals of HTML5, CSS3, and JavaScript — this site features a sleek, responsive design with smooth CSS transitions, clean layouts, and performance optimizations to showcase early projects. Deployed on GitHub Pages for fast, reliable hosting.",
+      Technoloiges: ["HTML5, ", "CSS3, ", "Javascript, ", "Github Pages"],
+      link: "https://github.com/d-swank/my-portfolio-v1",
     },
     {
       title: "FitHub",

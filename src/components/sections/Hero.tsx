@@ -15,7 +15,7 @@ export default function Hero() {
         transition={{ duration: 2 }}
       >
         Hello, I’m{" "}
-        <span className="text-indigo-600 dark:text-indigo-400 font-semibold font-sans">
+        <span className="text-indigo-600 dark:text-indigo-500 font-semibold font-sans">
           Dakota Swank
         </span>
       </motion.h1>

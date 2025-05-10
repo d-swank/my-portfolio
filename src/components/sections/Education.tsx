@@ -42,7 +42,7 @@ export default function Education() {
                 whileHover={{ y: -3, rotate: -5 }}
                 whileTap={{ y: -3, rotate: -5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-500"
+                className="text-indigo-600 dark:text-indigo-500 group-hover:text-indigo-700 dark:group-hover:text-indigo-600"
               >
                 <FaGraduationCap />
               </motion.span>
@@ -59,15 +59,15 @@ export default function Education() {
               transition={{ duration: 1, delay: 0.6 }}
             >
               <li className="flex items-center gap-2">
-                <FaAward className="text-indigo-600 dark:text-indigo-400" />
+                <FaAward className="text-indigo-600 dark:text-indigo-500" />
                 Golden Key International Honor Society
               </li>
               <li className="flex items-center gap-2">
-                <FaAward className="text-indigo-600 dark:text-indigo-400" />
+                <FaAward className="text-indigo-600 dark:text-indigo-500" />
                 Dean’s List
               </li>
               <li className="flex items-center gap-2">
-                <FaAward className="text-indigo-600 dark:text-indigo-400" />
+                <FaAward className="text-indigo-600 dark:text-indigo-500" />
                 GPA: 3.66
               </li>
             </motion.ul>
@@ -95,7 +95,7 @@ export default function Education() {
                 whileHover={{ y: -3, rotate: -5 }}
                 whileTap={{ y: -3, rotate: -5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-500"
+                className="text-indigo-600 dark:text-indigo-500 group-hover:text-indigo-700 dark:group-hover:text-indigo-500"
               >
                 <FaGraduationCap />
               </motion.span>
@@ -112,15 +112,15 @@ export default function Education() {
               transition={{ duration: 1, delay: 0.8 }}
             >
               <li className="flex items-center gap-2">
-                <FaAward className="text-indigo-600 dark:text-indigo-400" />
+                <FaAward className="text-indigo-600 dark:text-indigo-500" />
                 Phi Theta Kappa Honor Society
               </li>
               <li className="flex items-center gap-2">
-                <FaAward className="text-indigo-600 dark:text-indigo-400" />
+                <FaAward className="text-indigo-600 dark:text-indigo-500" />
                 President’s Permanent Honor Roll
               </li>
               <li className="flex items-center gap-2">
-                <FaAward className="text-indigo-600 dark:text-indigo-400" />
+                <FaAward className="text-indigo-600 dark:text-indigo-500" />
                 GPA: 3.76
               </li>
             </motion.ul>

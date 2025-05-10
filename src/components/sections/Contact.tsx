@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col justify-center bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white px-4 pt-24 pb-32 border-b border-indigo-600 dark:border-indigo-400"
+      className="min-h-screen flex flex-col justify-center bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white px-4 pt-24 pb-32 border-b border-indigo-600 dark:border-indigo-500"
     >
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
@@ -29,7 +29,7 @@ export default function Contact() {
         />
 
         <motion.div
-          className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-8 text-gray-800 dark:text-gray-100 hover:brightness-105 hover:border-indigo-600 dark:hover:border-indigo-400 transform backdrop-blur-sm max-w-3xl mx-auto"
+          className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg p-8 text-gray-800 dark:text-gray-100 hover:brightness-105 hover:border-indigo-600 dark:hover:border-indigo-500 transform backdrop-blur-sm max-w-3xl mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -76,7 +76,7 @@ export default function Contact() {
                 target={label === "Email" ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-500 cursor-pointer"
+                className="text-indigo-600 dark:text-indigo-500 hover:text-indigo-700 dark:hover:text-indigo-600 cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.3 }}

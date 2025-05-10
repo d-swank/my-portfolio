@@ -42,10 +42,10 @@ export default function Modal({ isOpen, closeModalAction }: ModalProps) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <DialogPanel className="w-full max-w-4xl relative transform rounded-2xl bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:bg-gray-800/70 text-gray-900 dark:text-gray-100 p-4 sm:p-6 text-center shadow-2xl border border-indigo-400 overflow-hidden">
+            <DialogPanel className="w-full max-w-4xl relative transform rounded-2xl bg-gradient-to-r from-white via-slate-200 to-slate-300 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:bg-gray-800/70 text-gray-900 dark:text-gray-100 p-4 sm:p-6 text-center shadow-2xl border border-indigo-500 overflow-hidden">
               <button
                 onClick={closeModalAction}
-                className="absolute top-4 right-4 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer"
+                className="absolute top-4 right-4 text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-500 cursor-pointer"
                 aria-label="Close"
               >
                 <X size={24} />

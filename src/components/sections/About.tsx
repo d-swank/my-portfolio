@@ -14,9 +14,9 @@ export default function About() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false, amount: 0.2 }}
-        className="flex justify-center mb-6 text-indigo-600 dark:text-indigo-400"
+        className="flex justify-center mb-6 text-indigo-600 dark:text-indigo-500"
       >
-        <FaUserAstronaut className="text-6xl hover:text-indigo-700 dark:hover:text-indigo-500" />
+        <FaUserAstronaut className="text-6xl hover:text-indigo-700 dark:hover:text-indigo-600" />
       </motion.div>
 
       <div className="max-w-screen-xl mx-auto text-center">
@@ -39,7 +39,7 @@ export default function About() {
         />
 
         <motion.div
-          className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border font-sans border-gray-300 dark:border-gray-600 shadow-lg p-8 text-gray-800 dark:text-gray-100 hover:brightness-105 hover:border-indigo-600 dark:hover:border-indigo-400 transform backdrop-blur-sm max-w-3xl mx-auto"
+          className="group bg-white/80 dark:bg-gray-800/70 rounded-lg border font-sans border-gray-300 dark:border-gray-600 shadow-lg p-8 text-gray-800 dark:text-gray-100 hover:brightness-105 hover:border-indigo-600 dark:hover:border-indigo-500 transform backdrop-blur-sm max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -52,7 +52,7 @@ export default function About() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             I’m{" "}
-            <span className="text-indigo-600 dark:text-indigo-400">
+            <span className="text-indigo-600 dark:text-indigo-500 font-sans font-semibold">
               Dakota Swank
             </span>
             , a creative and dedicated software engineer specializing in

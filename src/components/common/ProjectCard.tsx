@@ -34,7 +34,7 @@ export default function ProjectCard({
         <b>Technologies:</b> {Technologies}
       </p>
       <motion.span
-        className="text-indigo-600 dark:text-indigo-400 font-medium transform hover:text-indigo-700 dark:hover:text-indigo-500 hover:scale-105 inline-block relative hover:animate-pulse group"
+        className="text-indigo-600 dark:text-indigo-500 font-medium transform hover:text-indigo-700 dark:hover:text-indigo-600 hover:scale-105 inline-block relative hover:animate-pulse group"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
