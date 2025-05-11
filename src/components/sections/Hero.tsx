@@ -46,6 +46,19 @@ export default function Hero() {
     }
   }, [index, setTypingDone]);
 
+  useEffect(() => {
+    if (index < fullText.length) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Ensure scroll is restored on unmount
+      document.body.style.overflow = "auto";
+    };
+  }, [index]);
+
   const visibleText = fullText.slice(0, index);
   const prefix = visibleText.slice(0, prefixLength);
   const name = visibleText.slice(prefixLength);
@@ -69,7 +82,7 @@ export default function Hero() {
       </h1>
 
       <p
-        className={`text-xl md:text-2xl font-sans max-w-3xl mb-6 px-5 md:px-5 leading-relaxed transition-all duration-1000 ease-out transform ${
+        className={`text-xl md:text-2xl font-sans max-w-3xl mb-6 px-5 md:px-5 leading-relaxed transition-all duration-[1600ms] ease-[cubic-bezier(0.4,0,0.2,1)] transform ${
           showParagraph
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10"

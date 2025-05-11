@@ -37,7 +37,7 @@ export default function Navbar() {
               className="flex-shrink-0"
               initial={{ opacity: 0, x: -50 }}
               animate={typingDone ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 1.6, ease: [0.4, 0, 0.2, 1] }}
             >
               <Link
                 href="#hero"
@@ -92,7 +92,11 @@ export default function Navbar() {
                   href={link.href}
                   initial={{ opacity: 0, y: -50 }}
                   animate={typingDone ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.1 + i * 0.15, duration: 0.6 }}
+                  transition={{
+                    delay: 0.1 + i * 0.3,
+                    duration: 1.6,
+                    ease: "easeInOut",
+                  }}
                   className="relative flex hover:text-indigo-600 dark:hover:text-indigo-500 after:content-[''] after:absolute after:left-0 after:bottom-0.5 after:h-[2px] after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 after:ease-out hover:after:w-full"
                 >
                   {link.label}
@@ -101,18 +105,29 @@ export default function Navbar() {
 
               <motion.button
                 onClick={() => setIsResumeOpen(true)}
-                initial={{ opacity: 0, y: -60 }}
-                animate={typingDone ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0 }}
+                animate={typingDone ? { opacity: 1 } : {}}
                 transition={{
-                  delay: 0.1 + navLinks.length * 0.15,
-                  duration: 0.6,
+                  delay: 0.1 + navLinks.length * 0.3 + 0.5, // appears after last link
+                  duration: 1.6,
+                  ease: "easeInOut",
                 }}
-                className="relative flex font-mono text-lg pb-1 border-b-2 border-l-2 border-r-2 px-2 border-indigo-600 hover:border-indigo-600 hover:text-indigo-600 dark:border-indigo-500 dark:hover:border-indigo-500 text-indigo-500 transition-transform duration-200 shadow-lg hover:shadow-indigo-600 hover:animate-pulse cursor-pointer"
+                className="relative flex font-mono text-lg pb-1 border-b-2 border-l-2 border-r-2 px-2 border-indigo-600 hover:border-indigo-600 hover:text-indigo-600 dark:border-indigo-500 dark:hover:border-indigo-500 text-indigo-500 transition-transform duration-300 shadow-lg hover:shadow-indigo-600 hover:animate-pulse cursor-pointer"
               >
                 Resume
               </motion.button>
 
-              <ThemeToggle />
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={typingDone ? { opacity: 1 } : {}}
+                transition={{
+                  delay: 0.1 + navLinks.length * 0.3 + 0.5, // appears after Resume link
+                  duration: 1.6,
+                  ease: "easeInOut",
+                }}
+              >
+                <ThemeToggle />
+              </motion.div>
             </div>
 
             {/* Hamburger Icon */}
