@@ -11,7 +11,8 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-slate-200 via-white to-slate-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 text-gray-600 dark:text-gray-400 text-center py-6 px-4">
       <p className="mb-2 font-sans">
-        © {new Date().getFullYear()} Dakota Swank. All rights reserved.
+        Copyright © {new Date().getFullYear()} Dakota Swank. All rights
+        reserved.
       </p>
 
       <div className="space-x-4 text-sm mb-4 font-sans">
