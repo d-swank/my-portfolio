@@ -3,16 +3,18 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
+import { useTypingContext } from "@/components/common/Typewriter";
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { typingDone } = useTypingContext();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted || !typingDone) return null;
 
   const isDark = resolvedTheme === "dark";
 

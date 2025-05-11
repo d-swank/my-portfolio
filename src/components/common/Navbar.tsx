@@ -5,10 +5,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Modal from "./Modal";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
+import { useTypingContext } from "@/components/common/Typewriter";
 
 export default function Navbar() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { typingDone } = useTypingContext();
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -27,15 +29,15 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gradient-to-r from-white via-slate-200 to-slate-300 text-gray-900 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:text-white shadow-md sticky top-0 z-100">
+      <nav className="bg-gradient-to-r from-white via-slate-200 to-slate-300 text-gray-900 dark:from-gray-600 dark:via-gray-800 dark:to-gray-900 dark:text-white sticky top-0 z-100">
         <div className="px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex h-16 items-center justify-between gap-4">
             {/* Logo */}
             <motion.div
               className="flex-shrink-0"
               initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 2 }}
+              animate={typingDone ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 1.2 }}
             >
               <Link
                 href="#hero"
@@ -89,25 +91,27 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   initial={{ opacity: 0, y: -50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + i * 0.3, duration: 0.8 }}
+                  animate={typingDone ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.1 + i * 0.15, duration: 0.6 }}
                   className="relative flex hover:text-indigo-600 dark:hover:text-indigo-500 after:content-[''] after:absolute after:left-0 after:bottom-0.5 after:h-[2px] after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 after:ease-out hover:after:w-full"
                 >
                   {link.label}
                 </motion.a>
               ))}
+
               <motion.button
                 onClick={() => setIsResumeOpen(true)}
                 initial={{ opacity: 0, y: -60 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={typingDone ? { opacity: 1, y: 0 } : {}}
                 transition={{
-                  delay: 0.6 + navLinks.length * 0.3,
-                  duration: 0.8,
+                  delay: 0.1 + navLinks.length * 0.15,
+                  duration: 0.6,
                 }}
                 className="relative flex font-mono text-lg pb-1 border-b-2 border-l-2 border-r-2 px-2 border-indigo-600 hover:border-indigo-600 hover:text-indigo-600 dark:border-indigo-500 dark:hover:border-indigo-500 text-indigo-500 transition-transform duration-200 shadow-lg hover:shadow-indigo-600 hover:animate-pulse cursor-pointer"
               >
                 Resume
               </motion.button>
+
               <ThemeToggle />
             </div>
 
@@ -116,10 +120,8 @@ export default function Navbar() {
               <motion.button
                 onClick={() => setMenuOpen(!menuOpen)}
                 initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 1.2 }}
+                animate={typingDone ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2, duration: 0.6 }}
                 className="flex flex-col justify-center items-center gap-2  cursor-pointer"
               >
                 <motion.span

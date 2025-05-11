@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTypingContext } from "@/components/common/Typewriter";
 
 export default function Hero() {
   const fullText = "Hello, I'm Dakota Swank";
@@ -11,6 +12,7 @@ export default function Hero() {
   const [showBlink, setShowBlink] = useState(false);
   const [isInView, setIsInView] = useState(true);
   const [showParagraph, setShowParagraph] = useState(false);
+  const { setTypingDone } = useTypingContext();
 
   // Track if Hero section is in viewport
   useEffect(() => {
@@ -35,13 +37,14 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [index, isInView]);
 
-  // Enable blink + paragraph animation after typing
+  // Trigger post-typing effects
   useEffect(() => {
     if (index === fullText.length) {
       setShowBlink(true);
       setShowParagraph(true);
+      setTypingDone(true);
     }
-  }, [index]);
+  }, [index, setTypingDone]);
 
   const visibleText = fullText.slice(0, index);
   const prefix = visibleText.slice(0, prefixLength);

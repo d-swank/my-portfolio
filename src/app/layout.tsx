@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import { Providers } from "@/components/common/ThemeProvider";
+import { TypingProvider } from "@/components/common/Typewriter";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -47,7 +48,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <TypingProvider>{children}</TypingProvider>
+        </Providers>
       </body>
     </html>
   );
