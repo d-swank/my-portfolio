@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTypingContext } from "@/components/common/Typewriter";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const fullText = "Hello, I'm Dakota Swank";
@@ -81,16 +82,20 @@ export default function Hero() {
         </span>
       </h1>
 
-      <p
-        className={`text-xl md:text-2xl font-sans max-w-3xl mb-6 px-5 md:px-5 leading-relaxed transition-all duration-[1600ms] ease-[cubic-bezier(0.4,0,0.2,1)] transform ${
+      <motion.p
+        className={`text-xl md:text-2xl font-sans max-w-3xl mb-6 px-5 md:px-5 leading-relaxed ${
           showParagraph
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10"
         }`}
+        initial={{ opacity: 0, translateY: 10 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 1.6, delay: 4 }}
+        viewport={{ once: true }}
       >
         I’m a San Diego-based Software QA Engineer who is driven by detail and
         passionate about performance.
-      </p>
+      </motion.p>
     </section>
   );
 }
