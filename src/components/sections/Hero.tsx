@@ -15,7 +15,13 @@ export default function Hero() {
   const [showParagraph, setShowParagraph] = useState(false);
   const { setTypingDone } = useTypingContext();
 
-  // Track if Hero section is in viewport
+  // ✅ Redirect to homepage if user refreshes a non-root route
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.pathname !== "#") {
+      window.location.href = "#";
+    }
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -28,7 +34,6 @@ export default function Hero() {
     return () => observer.disconnect();
   }, []);
 
-  // Typewriter effect
   useEffect(() => {
     if (!isInView || index >= fullText.length) return;
 
@@ -38,7 +43,6 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [index, isInView]);
 
-  // Trigger post-typing effects
   useEffect(() => {
     if (index === fullText.length) {
       setShowBlink(true);
@@ -48,14 +52,8 @@ export default function Hero() {
   }, [index, setTypingDone]);
 
   useEffect(() => {
-    if (index < fullText.length) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
+    document.body.style.overflow = index < fullText.length ? "hidden" : "auto";
     return () => {
-      // Ensure scroll is restored on unmount
       document.body.style.overflow = "auto";
     };
   }, [index]);
